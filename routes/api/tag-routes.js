@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
 
 
 router.get('/', (req, res) => {
@@ -18,7 +17,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Tag.findOne({
+  Tag.findOne(
+    {
     where: {
       id: req.params.id,
     },
